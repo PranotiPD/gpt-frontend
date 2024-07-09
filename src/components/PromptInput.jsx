@@ -9,9 +9,6 @@ function PropmtInput(){
     const [answer, setAnswer] = useState('');
     const [loader, setLoader] = useState(false);
 
-    // useEffect(() => {
-    //     console.log("Answer updated:", answer);
-    // },[answer])
     const handleSubmit = async (e) => {
         e.preventDefault();
         //api call logic   
@@ -25,10 +22,8 @@ function PropmtInput(){
             setAnswer(response.data.data);
             setLoader(false)
         } catch (error) {
-            // toast.error("Failed to Roast 🙃, Try Once Again");
             console.log("Errror occurred");
         }
-        //set prompt to empty
         setPrompt('')
     }
 
